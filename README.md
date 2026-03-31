@@ -13,7 +13,7 @@
 A powerful Chrome extension that automates timer resets for [JustRunMy.App](https://justrunmy.app) users. Perfect for developers who use JustRunMy to keep their Telegram bots and applications running indefinitely.
 
 ## 🎯 Why Use This?
-
+ 
 **Problem:** JustRunMy.App timer resets manually every 24 hours, but if you forget or your bot can't access it, your Telegram bot goes offline.
 
 **Solution:** This extension automatically resets the timer on your schedule - no manual effort required. Your bot stays alive 24/7.
