@@ -50,52 +50,29 @@ JustRunMy.App Auto Reset is a powerful automation tool designed for developers a
 ## 📸 Screenshots
 
 ### Main Popup Interface
-![Main Popup](https://via.placeholder.com/600x400?text=Main+Popup+Interface)
+![Main Popup Interface](./screenshots/01-main-popup.png)
+
+**The main extension popup showing the countdown timer and status at a glance.**
 
 ### Status Dashboard
-![Status Tab](https://via.placeholder.com/600x400?text=Status+Dashboard)
+![Status Dashboard](./screenshots/02-status-dashboard.png)
+
+**Real-time status indicator with live countdown to the next scheduled reset.**
 
 ### Reset History
-![History Tab](https://via.placeholder.com/600x400?text=Reset+History+Tracking)
+![Reset History](./screenshots/03-reset-history.png)
+
+**Complete history of all reset attempts with timestamps and success/failure status.**
 
 ### Settings Configuration
-![Settings Page](https://via.placeholder.com/600x400?text=Easy+Settings+Configuration)
+![Settings Configuration](./screenshots/04-settings-config.png)
 
-### Schedule Example
-![Schedule](https://via.placeholder.com/600x400?text=Flexible+Day+Scheduling)
+**Easy-to-use settings page for customizing reset schedule and parameters.**
 
-> **Note:** Replace placeholder images with actual screenshots. Instructions below. 👇
+### Schedule Days Selection
+![Schedule Days](./screenshots/05-schedule-days.png)
 
-#### How to Add Your Screenshots:
-
-1. **Take screenshots** of your extension in action:
-   - Popup interface
-   - Status tab
-   - History tab
-   - Settings page
-   - Any other interesting features
-
-2. **Save images** to a `screenshots/` folder in your repo:
-   ```
-   screenshots/
-   ├── popup.png
-   ├── status.png
-   ├── history.png
-   ├── settings.png
-   └── schedule.png
-   ```
-
-3. **Update README** with your images:
-   ```markdown
-   ![Feature Name](./screenshots/filename.png)
-   ```
-
-4. **Commit and push**:
-   ```bash
-   git add screenshots/
-   git commit -m "Add screenshots"
-   git push origin main
-   ```
+**Flexible day selection - choose which days of the week to run automatic resets.**
 
 ---
 
