@@ -47,6 +47,58 @@ JustRunMy.App Auto Reset is a powerful automation tool designed for developers a
 
 ---
 
+## 📸 Screenshots
+
+### Main Popup Interface
+![Main Popup](https://via.placeholder.com/600x400?text=Main+Popup+Interface)
+
+### Status Dashboard
+![Status Tab](https://via.placeholder.com/600x400?text=Status+Dashboard)
+
+### Reset History
+![History Tab](https://via.placeholder.com/600x400?text=Reset+History+Tracking)
+
+### Settings Configuration
+![Settings Page](https://via.placeholder.com/600x400?text=Easy+Settings+Configuration)
+
+### Schedule Example
+![Schedule](https://via.placeholder.com/600x400?text=Flexible+Day+Scheduling)
+
+> **Note:** Replace placeholder images with actual screenshots. Instructions below. 👇
+
+#### How to Add Your Screenshots:
+
+1. **Take screenshots** of your extension in action:
+   - Popup interface
+   - Status tab
+   - History tab
+   - Settings page
+   - Any other interesting features
+
+2. **Save images** to a `screenshots/` folder in your repo:
+   ```
+   screenshots/
+   ├── popup.png
+   ├── status.png
+   ├── history.png
+   ├── settings.png
+   └── schedule.png
+   ```
+
+3. **Update README** with your images:
+   ```markdown
+   ![Feature Name](./screenshots/filename.png)
+   ```
+
+4. **Commit and push**:
+   ```bash
+   git add screenshots/
+   git commit -m "Add screenshots"
+   git push origin main
+   ```
+
+---
+
 ## ⚡ Features
 
 ✨ **Automatic Timer Reset**
