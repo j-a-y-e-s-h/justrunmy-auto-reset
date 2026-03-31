@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0ff;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #4c1d95, #6d28d9, #7c3aed);
+      padding: 13px 15px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .header img { width: 32px; height: 32px; border-radius: 8px; }
+    .header h1  { font-size: 13px; font-weight: 700; color: #fff; }
+    .header p   { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 1px; }
+    .header-right { margin-left: auto; }
+    .settings-btn {
+      background: rgba(255,255,255,0.12);
+      border: none; border-radius: 7px;
+      color: white; font-size: 16px;
+      width: 30px; height: 30px;
+      cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .settings-btn:hover { background: rgba(255,255,255,0.22); }
+
+    /* ── Status Bar ── */
+    #statusBar {
+      padding: 8px 14px;
+      font-size: 11px; font-weight: 600;
+      display: flex; align-items: center; gap: 7px;
+    }
+    #statusBar.idle    { background: #0f0f22; color: #4b5563; }
+    #statusBar.running { background: #150d30; color: #a78bfa; }
+    #statusBar.success { background: #031a0e; color: #4ade80; }
+    #statusBar.error   { background: #1f0808; color: #f87171; }
+    #statusBar.retry   { background: #1a1208; color: #fbbf24; }
+
+    .spinner { display: none; width: 11px; height: 11px; border: 2px solid rgba(167,139,250,0.3); border-top-color: #a78bfa; border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+    .spinner.on { display: block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #1a1a33;
+    }
+    .tab {
+      flex: 1; padding: 9px 0;
+      text-align: center; font-size: 11px;
+      font-weight: 600; color: #4b5563;
+      cursor: pointer; border: none;
+      background: none; transition: all 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab:hover { color: #a78bfa; }
+    .tab.active { color: #a78bfa; border-bottom-color: #7c3aed; }
+
+    /* ── Tab Panels ── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── Status Panel ── */
+    .info-row {
+      padding: 10px 14px;
+      border-bottom: 1px solid #111128;
+    }
+    .info-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #374151; margin-bottom: 3px; }
+    .info-value { font-size: 12px; color: #c4b5fd; font-weight: 500; }
+    .info-value.ok  { color: #4ade80; }
+    .info-value.err { color: #f87171; }
+    .info-value.dim { color: #374151; }
+
+    /* Countdown to next reset */
+    .next-reset-card {
+      margin: 12px 14px;
+      background: linear-gradient(135deg, #150d30, #1e1040);
+      border: 1px solid #3b1f8c;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .next-reset-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #6b21a8; margin-bottom: 6px; }
+    .next-reset-countdown { font-size: 22px; font-weight: 800; color: #e9d5ff; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
+    .next-reset-date { font-size: 10px; color: #7c3aed; margin-top: 4px; }
+
+    /* Progress steps */
+    .progress-steps { display: none; padding: 8px 14px 4px; flex-direction: column; gap: 5px; }
+    .progress-steps.on { display: flex; }
+    .step { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #374151; }
+    .step.active { color: #a78bfa; }
+    .step.done   { color: #4ade80; }
+
+    /* Manual reset button */
+    .btn-reset {
+      display: block; width: calc(100% - 28px);
+      margin: 12px 14px 14px;
+      padding: 11px; border: none; border-radius: 9px;
+      font-size: 13px; font-weight: 700; cursor: pointer;
+      background: linear-gradient(135deg, #5b21b6, #7c3aed);
+      color: white; transition: all 0.15s;
+    }
+    .btn-reset:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
+    .btn-reset:disabled { background: #1a1a30; color: #374151; cursor: not-allowed; transform: none; }
+
+    /* ── History Panel ── */
+    .history-list { padding: 8px 0; max-height: 260px; overflow-y: auto; }
+    .history-list::-webkit-scrollbar { width: 4px; }
+    .history-list::-webkit-scrollbar-track { background: #0a0a1a; }
+    .history-list::-webkit-scrollbar-thumb { background: #2d1065; border-radius: 2px; }
+
+    .history-item {
+      padding: 9px 14px;
+      border-bottom: 1px solid #0f0f22;
+      display: flex; align-items: flex-start; gap: 9px;
+    }
+    .h-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .h-info { flex: 1; min-width: 0; }
+    .h-title { font-size: 11px; font-weight: 600; }
+    .h-title.ok  { color: #4ade80; }
+    .h-title.err { color: #f87171; }
+    .h-meta  { font-size: 10px; color: #4b5563; margin-top: 2px; }
+    .h-time  { font-size: 9px; color: #374151; text-align: right; flex-shrink: 0; padding-top: 2px; }
+
+    .history-empty { text-align: center; padding: 30px 14px; color: #374151; font-size: 12px; }
+
+    /* ── Footer ── */
+    .footer { text-align: center; padding: 7px; font-size: 9px; color: #1a1a33; border-top: 1px solid #0f0f22; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <img src="icon.png" alt="icon">
+  <div>
+    <h1>JustRunMy.App Auto Reset</h1>
+    <p>Telegram bot stays alive 24/7</p>
+  </div>
+  <div class="header-right">
+    <button class="settings-btn" id="settingsBtn" title="Settings">⚙️</button>
+  </div>
+</div>
+
+<div id="statusBar" class="idle">
+  <div class="spinner" id="spinner"></div>
+  <div class="dot" id="dot"></div>
+  <span id="statusText">Ready</span>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-tab="status">📊 Status</button>
+  <button class="tab" data-tab="history">📋 History</button>
+</div>
+
+<!-- STATUS TAB -->
+<div class="panel active" id="tab-status">
+
+  <div class="next-reset-card">
+    <div class="next-reset-label">⏱ Next Auto Reset</div>
+    <div class="next-reset-countdown" id="countdown">--:--:--</div>
+    <div class="next-reset-date" id="nextResetDate">Calculating...</div>
+  </div>
+
+  <div class="info-row">
+    <div class="info-label">Last Reset</div>
+    <div class="info-value dim" id="lastReset">Never</div>
+  </div>
+
+  <div class="info-row">
+    <div class="info-label">Schedule</div>
+    <div class="info-value" id="scheduleInfo">Tue · Thu · Sat at 11:00 PM IST</div>
+  </div>
+
+  <div class="progress-steps" id="progressSteps">
+    <div class="step" id="s1">🌐 Opening JustRunMy.App...</div>
+    <div class="step" id="s2">🖱️ Clicking Reset Timer</div>
+    <div class="step" id="s3">🔒 Waiting for Cloudflare (12s)</div>
+    <div class="step" id="s4">✅ Clicking Just Reset</div>
+  </div>
+
+  <button class="btn-reset" id="resetBtn">🔁 Reset Timer Now</button>
+</div>
+
+<!-- HISTORY TAB -->
+<div class="panel" id="tab-history">
+  <div class="history-list" id="historyList">
+    <div class="history-empty">No resets yet</div>
+  </div>
+</div>
+
+<div class="footer">Chrome must run in background for auto-reset • v2.0</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

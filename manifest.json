@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "JustRunMy.App Auto Reset",
+  "version": "2.0",
+  "description": "Auto-resets JustRunMy.App timer. Never let your Telegram bot die.",
+  "permissions": [
+    "alarms",
+    "tabs",
+    "scripting",
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://justrunmy.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "48": "icon.png"
+  }
+}
