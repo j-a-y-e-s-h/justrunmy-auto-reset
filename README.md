@@ -1,19 +1,53 @@
 # 🤖 JustRunMy.App Auto Reset
 
-[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/justrunmy-auto-reset?style=flat-square&logo=github)](https://github.com/YOUR_USERNAME/justrunmy-auto-reset)
+[![GitHub stars](https://img.shields.io/github/stars/j-a-y-e-s-h/justrunmy-auto-reset?style=flat-square&logo=github)](https://github.com/j-a-y-e-s-h/justrunmy-auto-reset)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-brightgreen?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/version-2.0-orange?style=flat-square)]()
+[![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-yellow?style=flat-square&logo=javascript)]()
+[![Telegram Compatible](https://img.shields.io/badge/🤖%20Telegram-Bot%20Compatible-0088cc?style=flat-square)]()
+![Downloads](https://img.shields.io/badge/dynamic/json?url=https://github.com/j-a-y-e-s-h/justrunmy-auto-reset&query=watchers&label=Watchers&style=flat-square&logo=github)
 
 **Automatically reset your JustRunMy.App timer on schedule. Keep your Telegram bot alive 24/7 without manual intervention.** ⏰✨
 
 A powerful Chrome extension that automates timer resets for [JustRunMy.App](https://justrunmy.app) users. Perfect for developers who use JustRunMy to keep their Telegram bots and applications running indefinitely.
 
+## 🎯 Why Use This?
+
+**Problem:** JustRunMy.App timer resets manually every 24 hours, but if you forget or your bot can't access it, your Telegram bot goes offline.
+
+**Solution:** This extension automatically resets the timer on your schedule - no manual effort required. Your bot stays alive 24/7.
+
+**Result:** ✅ Never worry about bot downtime again  
+✅ Set it once, forget it  
+✅ Works while you sleep  
+✅ Completely free and open source  
+
+### Perfect For:
+- 🤖 **Telegram Bot Developers** - Keep bots running indefinitely
+- 🔧 **App Maintainers** - Automate JustRunMy.App resets
+- ⏰ **Lazy Developers** - No manual reset clicks
+- 💰 **Budget-Conscious** - Free replacement for paid alternatives
+
 ## Overview
 
 JustRunMy.App Auto Reset is a powerful automation tool designed for developers and bot maintainers who use JustRunMy.App to keep their applications running. This extension automatically accesses your JustRunMy.App panel and resets the timer at scheduled intervals, ensuring your Telegram bot (or any other application) remains active without manual intervention.
 
-## Features
+## Comparison with Alternatives
+
+| Feature | This Extension | Manual Click | Browser Task | Other Bots |
+|---------|---|---|---|---|
+| **Automatic** | ✅ | ❌ | ❌ | ✅ |
+| **Easy Setup** | ✅ | N/A | ❌ | ❌ |
+| **Free** | ✅ | N/A | ✅ | ❌ |
+| **Open Source** | ✅ | N/A | ❌ | ❌ |
+| **No Dependencies** | ✅ | N/A | ✅ | ❌ |
+| **Schedule Control** | ✅ | N/A | ❌ | ✅ |
+| **Works Offline** | ❌ | ✅ | ❌ | Depends |
+
+---
+
+## ⚡ Features
 
 ✨ **Automatic Timer Reset**
 - Scheduled resets on specific days and times
@@ -242,3 +276,43 @@ If you encounter issues:
 ---
 
 **Developed for keeping your JustRunMy.App bots running 24/7** 🤖
+
+## 🙏 Support This Project
+
+If you find this extension helpful:
+
+- ⭐ **Star the repository** - Helps others discover it!
+- 🐛 **Report bugs** - Use GitHub Issues
+- 💡 **Suggest features** - Share your feature ideas
+- 📣 **Tell your friends** - Share in communities
+- 🤝 **Contribute** - Submit pull requests with improvements
+
+## Contributing
+
+Contributions are welcome! Here's how:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Community
+
+- 🐛 **Found a bug?** [Open an Issue](https://github.com/j-a-y-e-s-h/justrunmy-auto-reset/issues)
+- 💬 **Have feedback?** [Start a Discussion](https://github.com/j-a-y-e-s-h/justrunmy-auto-reset/discussions)
+- 📝 **Want to contribute?** [See Contributing Guide](#contributing)
+
+## Related Projects
+
+- [JustRunMy.App](https://justrunmy.app) - Official JustRunMy application
+- [Awesome Telegram Bots](https://github.com/botlist/awesome-telegram) - Curated Telegram bot resources
+- [Awesome Chrome Extensions](https://github.com/topics/chrome-extension) - Chrome extension showcase
+
+---
+
+## 📊 Stats
+
+![GitHub repo size](https://img.shields.io/github/repo-size/j-a-y-e-s-h/justrunmy-auto-reset?style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/j-a-y-e-s-h/justrunmy-auto-reset?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/j-a-y-e-s-h/justrunmy-auto-reset?style=flat-square)
