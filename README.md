@@ -49,30 +49,25 @@ JustRunMy.App Auto Reset is a powerful automation tool designed for developers a
 
 ## 📸 Screenshots
 
-### Main Popup Interface
-![Main Popup Interface](./screenshots/01-main-popup.png)
+### Reset History Tab
+![Reset History](./screenshots/01-history-tab.png)
 
-**The main extension popup showing the countdown timer and status at a glance.**
+**Complete history of all reset attempts showing timestamps, status (✓ Success), and whether resets were manual or automatic.**
 
-### Status Dashboard
-![Status Dashboard](./screenshots/02-status-dashboard.png)
+### Status & Countdown Timer
+![Status Countdown](./screenshots/02-status-countdown.png)
 
-**Real-time status indicator with live countdown to the next scheduled reset.**
+**Live countdown timer showing the next auto-reset time with detailed schedule information. Press "Reset Timer Now" for manual resets.**
 
-### Reset History
-![Reset History](./screenshots/03-reset-history.png)
+### Settings Configuration Page  
+![Settings Page](./screenshots/03-settings-page.png)
 
-**Complete history of all reset attempts with timestamps and success/failure status.**
+**Easy-to-use settings interface for customizing reset days (Sun-Sat), reset time (IST), and Cloudflare wait time.**
 
-### Settings Configuration
-![Settings Configuration](./screenshots/04-settings-config.png)
+### JustRunMy.App Reset Success
+![JustRunMy Reset](./screenshots/04-justrunmy-reset.png)
 
-**Easy-to-use settings page for customizing reset schedule and parameters.**
-
-### Schedule Days Selection
-![Schedule Days](./screenshots/05-schedule-days.png)
-
-**Flexible day selection - choose which days of the week to run automatic resets.**
+**Confirmation that the auto-reset was successful! The extension automatically triggers the reset in the JustRunMy.App panel.**
 
 ---
 
